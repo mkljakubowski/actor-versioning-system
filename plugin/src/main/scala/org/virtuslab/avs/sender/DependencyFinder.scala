@@ -21,7 +21,6 @@ object DependencyFinder {
   var classes = Seq.empty[String]
 
   def findDepsOfClass(fqn: String, classesDir: String): Set[String] = {
-    println(fqn)
     try {
       val actorPath = fqn.split("\\.").mkString("/") + ".class"
       val cp = new ClassParser(s"$classesDir/$actorPath")
